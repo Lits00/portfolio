@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+// Genaral
+:root{
+    --light: #FFFFFF;
+    --dark: #272829;
+    --effect: #ffd700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.title{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+a, .btn {
+    transition: all 300ms ease;
+}
+
+nav, .nav-list, .hamburger-icon, .profile, .info, .btn-container, .about, .about-info, .project, .project-info, .project-btns, .contact-info{
+    display: flex;
+}
+
+.hamburger-icon, .info, .about, .project, .project-info, .contact-info{
+    flex-direction: column;
+}
+
+nav, .menu-list, .btn-1{
+    background-color: var(--light);
+}
+
+a, .link{
+    color: var(--dark);
+}
+
+.btn, .profile-pic, .project, .project-btn{
+    border: solid 1px var(--dark);
+}
+
+.menu-btn, .info, .title, .skill, .skill-container, footer{
+    text-align: center;
+}
+
+// desktop nav
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    .logo{
+        font-size: 2rem;
+    }
+    .logo:hover{
+        cursor: default;
+    }
+    .nav-list{
+        list-style-type: none;
+        gap: 2rem;
+        font-size: 1.5rem;
+        a{
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+        }
+        a::after{
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            margin: 0 0 0;
+            background: var(--effect);
+            transition: width .3s;
+        }
+        a:hover::after{
+            width: 100%;
+        }
+    }
+}
+
+// mobile nav
+#mobile-nav{
+    display: none;
+    .hamburger-btn{
+        position: relative;
+        display: inline-block;
+        background-color: inherit;
+        border: none;
+        padding: 1rem 0;
+    }
+    .hamburger-icon{
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
+        cursor: pointer;
+        span{
+            width: 100%;
+            height: 2px;
+            background-color: var(--dark);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+    .hamburger-icon.open span:first-child{
+        transform: rotate(45deg) translate(10px, 5px);
+    }
+    .hamburger-icon.open span:nth-child(2){
+        opacity: 0
+    }
+    .hamburger-icon.open span:last-child{
+        transform: rotate(-45deg) translate(10px, -5px);
+    }
+    .menu-list{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        border-radius: 0 0 10px 10px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .4s ease-in-out;
+        .menu-btn{
+            display: block;
+            padding: 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+        }
+        li{
+            list-style-type: none;
+        }
+    }
+    .menu-list.open{
+        max-height: 300px;
+    }
+}
+
+.profile{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    .info{
+        gap: 1rem;
+        .btn-container{
+            justify-content: center;
+            gap: 1rem;
+            .btn{
+                font-weight: 600;
+                padding: 1rem 1.5rem;
+                border-radius: 2rem;
+                transition: all .3s ease;
+            }
+            .btn:hover{
+                cursor: pointer;
+                background-color: var(--effect);
+                border-color: var(--effect);
+            }
+            .btn-2{
+                background-color: var(--dark);
+                color: var(--light);
+            }
+        }
+        .social{
+            .link{
+                text-decoration: none;
+                font-size: 2.5rem;
+                padding: 0 .3rem;
+            }
+            .link:hover{
+                color: var(--effect);
+            }
+        }
+    }
+}
+
+.about, .projects{
+    min-height: calc(100vh - 10vh);
+    padding-top: 10vh;
+}
+
+.about{
+    gap: 2rem;
+    .about-info{
+        flex-direction: row-reverse;
+        justify-content: center;
+        .profile-pic{
+            max-width: 250px;
+            max-height: 300px;
+            border-radius: .5rem;
+        }
+        .about-container{
+            margin: 0 5rem 0 0;
+            .about-txt{
+                line-height: 1.3;
+                p{
+                    margin: .5rem 0 0 0;
+                }
+                .hobbies{
+                    margin-top: 1rem;
+                }
+                li{
+                    list-style-type: none;
+                    vertical-align: middle;
+                    span{
+                        vertical-align:sub;
+                    }
+                }
+            }
+        }
+    }
+    .about-skill{
+        margin: 1rem 0 0;
+        .skill{
+            font-size: 1.5rem;
+            margin: .5rem;
+        }
+        .skill-container{
+            display: grid;
+            
+            p{
+               padding: 1rem; 
+               cursor: default;
+            }
+            i{
+                font-size: 2rem;
+                display: block;
+            }
+        }
+    }
+}
+
+.projects{
+    .project-container{
+        padding-top: 2rem;
+        display: grid;
+        gap: 2rem;
+        .project{
+            padding: 1rem;
+            border-radius: 1rem;
+            img{
+                max-width: 100%;
+                border-radius: 1rem;
+            }
+            .project-info{
+                align-items: center;
+                .project-title{
+                    font-size: 1.5rem;
+                    margin: 1rem;
+                }
+                .project-btns{
+                    justify-content: space-around;
+                    width: 100%;
+                    .project-btn{
+                        text-decoration: none;
+                        padding: .3rem .5rem;
+                        border-radius: 1rem;
+                    }
+                    a:hover{
+                        background-color: var(--effect);
+                        border: solid 1px var(--effect);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact{
+    padding-top: 10vh;
+    min-height: 90vh;
+    .contact-info{
+       align-items: center;
+       justify-content: center;
+       margin-top: 1rem;
+       height: 500px;
+       font-size: 1.5rem;
+       a{
+        text-decoration: none;
+        i{
+            font-size: 2.5rem;
+        }
+       }
+       a:hover{
+        color: var(--effect);
+       }
+    }
+}
+
+footer{
+    padding: 1rem;
+    a{
+        text-decoration: none;
+    }
+}
+
+// larger screen setting
+@media screen and (min-width: 1200px) {
+    section{
+        margin: 0 10rem;
+    }
+    .name{
+        font-size: 4rem;
+    }
+    .role{
+        font-size: 2.5rem;
+    }
+    .skill-container{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .project-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// set hamburger icon for smaller screen
+@media screen and (max-width: 1199px) {
+    #desktop-nav{
+        display: none;
+    }
+    #mobile-nav{
+        display: flex;
+    }
+    section{
+        margin: 0 7rem;
+    }
+    .name{
+        font-size: 3rem;
+    }
+    .role{
+        font-size: 2rem;
+    }
+    .skill-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .project-container{
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+// tablet
+@media screen and (max-width: 1023px) {
+    .about-info{
+        flex-direction: column !important;
+        align-items: center;
+        gap: 1rem;
+        .about-container{
+            margin: 0 !important;
+        }
+    }
+}
+
+// mobile phone
+@media screen and (max-width: 600px) {
+    section{
+        margin: 0 3rem;
+    }
+    .name{
+        font-size: 2rem;
+    }
+    .role{
+        font-size: 1.5rem;
+    }
+    .btn{
+        padding: .5rem .5rem !important;
+    }
+    .skill-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
