@@ -160,12 +160,14 @@ nav{
                 padding: 1rem 1.5rem;
                 border-radius: 2rem;
                 transition: all .3s ease;
-                color: var(--dark);
             }
             .btn:hover{
                 cursor: pointer;
                 background-color: var(--effect);
                 border-color: var(--effect);
+            }
+            .btn-1{
+                color: var(--dark) !important;
             }
             .btn-2{
                 background-color: var(--dark);
