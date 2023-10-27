@@ -159,6 +159,7 @@ nav .nav-list a:hover::after {
   padding: 1rem 1.5rem;
   border-radius: 2rem;
   transition: all 0.3s ease;
+  color: var(--dark);
 }
 .profile .info .btn-container .btn:hover {
   cursor: pointer;
