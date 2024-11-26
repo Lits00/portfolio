@@ -283,6 +283,7 @@ nav .nav-list a:hover::after {
 
 .contact {
   padding-top: 10vh;
+  min-height: 90vh;
 }
 .contact .contact-info {
   text-align: center;
